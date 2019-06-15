@@ -6,6 +6,7 @@ The approach tries to find the possible solution by recursively trying all possi
 
 Code Explanation:
 The pawn_trace.rb file conatins the PawnTrace Class that contains all the logic:
+
 	$movementRule : this global variable consists of arrays that resembles all movements from North to North-East in an anti-clockwise fashion for a pawn at any location on board. eg: if pawn is at a location and he needs to move North so this means his row coordinate will be reduced by 3 but column would be same hence for North [-3, 0] are the coordinate moves.
 
 	initialize: this is the constructor method and it initializes the game, like the board, moves of pawn, and all other required parameters.
