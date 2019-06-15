@@ -1,0 +1,11 @@
+1) Open console/terminal and move to the location where pawn_trace directory is located on the system and open the directory in terminal.
+2) Execute start_game.rb by typing ruby start_game.rb
+3) Follow the instructions on screen like when asked to enter the numbers of blocks in row, if you enter 10 it will create a 10 * 10 matrix/board for you and then enter the initial coordinates where the pawn is to be situated on the board.
+4) If the pawn is able to traverse along the matrix then the path taken would be displayed as output else it will give an Error message for no Valid Path Found.
+
+If you seperately want to execute the code then move to lib folder and at the end of pawn_trace.rb file create an object of PawnTrace class and initialize the number of blocks expected in a row.
+Now call the start_pawn method for the object and initialize the position of pawn on board.
+Eg: if you want to create 10 * 10 board and want the pawn to start from 4th row 3rd column, write:
+	obj=PawnTrace.new (10)
+	obj.start_pawn(3,2)
+This will display the board with path taken if the pawn is successful in completing its journey. Else if no path found it wont display any thing.

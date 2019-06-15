@@ -1,0 +1,22 @@
+The approach I considered for finding the solution is based on BackTracking Algorithm. 
+The approach tries to find the possible solution by recursively trying all possible paths.
+
+Code Explanation:
+The pawn_trace.rb file conatins the PawnTrace Class that contains all the logic:
+	$movementRule : this global variable consists of arrays that resembles all movements from North to North-East in an anti-clockwise fashion for a pawn at any location on board. eg: if pawn is at a location and he needs to move North so this means his row coordinate will be reduced by 3 but column would be same hence for North [-3, 0] are the coordinate moves.
+
+	initialize: this is the constructor method and it initializes the game, like the board, moves of pawn, and all other required parameters.
+
+	start_pawn: the method initializes the pawn on the board in the initial coordinates provided and call make_the_move method to start finding the feasible path.
+
+	make_the_move: this is the recursive method:
+		It initially checks that whether the pawn has traversed along all the tiles of board or not by compairing the number of moves taken by pawn to the total number of blocks/tiles on board. If found true it exits finding path and prints the trace taken by the pawn.
+		If moves still exists it starts finding the next valid coordinate with respect to pawn's current coordinates with the help of is_move_valid method and then move to the first valid coordinate found and then again calls itself (recursively) with the pawn's new coordinates as current coordinates and starts finding the next valid move from that point.
+		If no valid move is found, the method returns back to the location from where the method was called, that is the pawn retreats a step backward and checks the next valid move from that location.
+		This is where Back-Tracking Algorithm comes into play and help the program in remebering the pawns last valid location.
+
+	is_move_valid: this method receives the new location coordinates where the pawn is expecting its movement and validates if the coordinates lies in the board and if the location has not been already visited by the pawn. If found false it returns that the movement is not possible.
+
+	display_path: Once the pawn has satisfactorily visited all the blocks on board the method prints the path followed by the pawn on board. The path starts from block numbered as 1 (this is the initial block of the pawn) to the highest number on board as the final destination, where other numbers signify the step by step moves taken by the pawn.
+	 
+
